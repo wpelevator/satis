@@ -31,7 +31,7 @@ jobs:
         run: composer build -vvv
 
       - name: Setup deploy credentials
-        run: echo "${{ secrets.DEPLOY_PRIVATE_KEY }}" > deploy-ssh-key && chmod 644 deploy-ssh-key
+        run: echo "${{ secrets.DEPLOY_PRIVATE_KEY }}" > deploy-ssh-key && chmod 600 deploy-ssh-key
 
       - name: Deploy
         if: github.ref_name == 'main'
