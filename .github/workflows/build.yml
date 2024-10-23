@@ -27,10 +27,8 @@ jobs:
       - name: Configure package access
         run: composer config github-oauth.github.com "${{ secrets.PACKAGE_READ_TOKEN }}"
 
-      - run: composer config --list
-
       - name: Build
-        run: composer build
+        run: composer build -vvv
 
       - name: Setup deploy credentials
         run: echo "${{ secrets.DEPLOY_PRIVATE_KEY }}" > deploy-ssh-key
