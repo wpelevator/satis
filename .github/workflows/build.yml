@@ -35,4 +35,4 @@ jobs:
 
       - name: Deploy
         if: github.ref_name == 'main'
-        run: rsync -e "ssh -vvv -o StrictHostKeyChecking=no -o HostKeyAlgorithms=+ssh-rsa -i deploy-ssh-key" --archive --verbose public/ satis@wpelevator.com:satis/
+        run: rsync -e "ssh -vvv -oStrictHostKeyChecking=no -oHostKeyAlgorithms=+ssh-rsa -oPubkeyAcceptedKeyTypes=+ssh-rsa -i deploy-ssh-key" --archive --verbose public/ satis@wpelevator.com:satis/
