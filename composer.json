@@ -1,0 +1,10 @@
+{
+	"name": "wpelevator/satis",
+	"type": "project",
+	"require": {
+		"composer/satis": "^1.0"
+	},
+	"scripts": {
+		"build": "satis build satis.json"
+	}
+}
