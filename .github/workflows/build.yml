@@ -12,6 +12,9 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
+        with:
+          # These don't have read access to all packages.
+          persist-credentials: false
 
       - uses: shivammathur/setup-php@v2
         with:
