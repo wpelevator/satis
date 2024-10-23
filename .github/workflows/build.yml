@@ -31,10 +31,8 @@ jobs:
         run: composer build
 
       - name: Setup deploy credentials
-        uses: shimataro/ssh-key-action@v2
-        with:
-          key: ${{ secrets.DEPLOY_PRIVATE_KEY }}
+        run: echo "${{ secrets.DEPLOY_PRIVATE_KEY }}" > deploy-ssh-key
 
       - name: Deploy
         if: github.ref_name == 'main'
-        run: rsync --archive --verbose public/ satis@wpelevator.com:satis/
+        run: rsync -e "ssh -i deploy-ssh-key" --archive --verbose public/ satis@wpelevator.com:satis/
