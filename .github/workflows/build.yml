@@ -27,6 +27,8 @@ jobs:
       - name: Configure package access
         run: composer config github-oauth.github.com "${{ secrets.PACKAGE_READ_TOKEN }}"
 
+      - run: composer config --list
+
       - name: Build
         run: composer build
 
