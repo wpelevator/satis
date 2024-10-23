@@ -2,8 +2,8 @@
 	"name": "wpelevator/satis",
 	"homepage": "https://satis.wpelevator.com",
 	"repositories": [
-		{ "type": "vcs", "url": "git@github.com:wpelevator/wp-autoload.git" },
-		{ "type": "vcs", "url": "git@github.com:wpelevator/vendor-isolator.git" }
+		{ "type": "vcs", "url": "https://github.com/wpelevator/wp-autoload" },
+		{ "type": "vcs", "url": "https://github.com/wpelevator/vendor-isolator" }
 	],
 	"output-dir": "public",
 	"archive": {
