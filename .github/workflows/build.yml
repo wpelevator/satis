@@ -32,4 +32,5 @@ jobs:
           key: ${{ secrets.DEPLOY_PRIVATE_KEY }}
 
       - name: Deploy
+        if: github.ref_name == 'main'
         run: rsync --archive --verbose public/ satis@wpelevator.com:satis/
