@@ -15,8 +15,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          # These don't have read access to all packages.
+          # Since the runner token don't have read access to all packages.
           persist-credentials: false
+      
+      - id: composer-cache
+        run: echo "dir=$(composer config data-dir)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}/cache
+          key: ${{ runner.os }}-satis-${{ hashFiles('**/satis.json') }}
+          restore-keys: ${{ runner.os }}-satis-
 
       - uses: shivammathur/setup-php@v2
         with:
