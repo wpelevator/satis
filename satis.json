@@ -10,7 +10,7 @@
 	"output-dir": "public",
 	"archive": {
 		"directory": "packages",
-		"skip-dev": true
+		"skip-dev": false
 	},
 	"require-all": true
 }
