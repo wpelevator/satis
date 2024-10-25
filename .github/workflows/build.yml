@@ -25,7 +25,8 @@ jobs:
         run: composer install
 
       - name: Configure package access
-        run: composer config github-oauth.github.com "${{ secrets.PACKAGE_READ_TOKEN }}"
+        # This must be set globally due to Satis using only the global auth.json. 
+        run: composer config --global github-oauth.github.com "${{ secrets.PACKAGE_READ_TOKEN }}"
 
       - name: Build
         run: composer build -vvv
