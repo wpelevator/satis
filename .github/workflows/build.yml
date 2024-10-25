@@ -17,7 +17,10 @@ jobs:
         with:
           # Since the runner token don't have read access to all packages.
           persist-credentials: false
-      
+
+      - run: composer config --list
+      - run: composer config --list --global
+
       - id: composer-cache
         run: echo "dir=$(composer config cache-dir)" >> $GITHUB_OUTPUT
 
