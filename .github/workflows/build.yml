@@ -28,7 +28,7 @@ jobs:
         run: composer config github-oauth.github.com "${{ secrets.PACKAGE_READ_TOKEN }}"
 
       - name: Build
-        run: composer build -vvv
+        run: composer build --no-interaction -vvv
 
       - name: Setup deploy credentials
         run: |
