@@ -4,7 +4,8 @@
 	"repositories": [
 		{ "type": "vcs", "url": "https://github.com/wpelevator/wp-autoload" },
 		{ "type": "vcs", "url": "https://github.com/wpelevator/vendor-isolator" },
-		{ "type": "vcs", "url": "https://github.com/wpelevator/update-server" }
+		{ "type": "vcs", "url": "https://github.com/wpelevator/update-server" },
+		{ "type": "vcs", "url": "https://github.com/wpelevator/seo-pilot" }
 	],
 	"output-dir": "public",
 	"archive": {
